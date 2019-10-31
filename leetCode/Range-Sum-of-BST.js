@@ -20,7 +20,7 @@
 // The final answer is guaranteed to be less than 2^31.
 
 var rangeSumBST = function(root, L, R) {
-    let sum = 0 
+    let sum = 0; 
     const transversal = (root, L, R)=>{
         if (!root.left && !root.right) {
             return;
@@ -28,21 +28,21 @@ var rangeSumBST = function(root, L, R) {
         
         if(root.left){
             if(root.left.val >= L && root.right.val <= R){
-                sum += root.left.val
+                sum += root.left.val;
             }
-            transversal(root.left , L, R)
+            transversal(root.left , L, R);
         }
          if(root.right){
             if(root.right.val >= L && root.right.val <= R){
-                sum += root.right.val
+                sum += root.right.val;
             }
-            transversal(root.right , L, R)
+            transversal(root.right , L, R);
         }
-    }
+    };
            transversal(root, L, R);
         if(root.val >= L && root.val <= R){
-            sum += root.val
+            sum += root.val;
         }
     // console.log(sum);
-    return sum
+    return sum;
 };
