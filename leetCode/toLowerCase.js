@@ -16,5 +16,5 @@
 // Output: "lovely"
 
 var toLowerCase = function(str) {
-    return str.toLowerCase()
+    return str.toLowerCase();
 };
