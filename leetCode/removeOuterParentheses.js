@@ -9,7 +9,7 @@ var removeOuterParentheses = function(S) {
         } else if (S[str-1] === ")" && S[str] === ")") {
             level--;
         }
-
+        
         if (level > 0) {
             res += S[str];
         }
