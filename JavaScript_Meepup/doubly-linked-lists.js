@@ -1,6 +1,7 @@
 class Node {
     constructor(val) {
       this.val = val; 
+      // node pointers
       this.next = null; 
       this.prev = null;
     }
@@ -12,6 +13,7 @@ class Node {
       this.tail = null; 
       this.length = 0;
     }
+    // adds val to end of list 
     push(val) {
       let newNode = new Node(val);
       if (!this.head) {
@@ -19,16 +21,19 @@ class Node {
         this.tail = newNode;
       } else {
         this.tail.next = newNode;
-        newNode.prev = this.tail;
-        this.tail = newNode;
+        newNode.prev = this.tail; // makes a ref to the prev node 
+        this.tail = newNode; //reassigns the new node as the tail 
       }
       this.length++;
-      return this;
+      return this; //returns the DBL-linkList 
     }
+    //removes last node 
     pop() {
       let oldTail = this.tail;
+      //checking for a empty list
       if (!this.head) return undefined;
-      if (this.length === 1) {
+      // checking for a single node of just one node in the list 
+      if (this.length === 1) { //alt: if(this.head === this.tail)
         this.head = null;
         this.tail = null;
       } else {
@@ -39,6 +44,7 @@ class Node {
       this.length--;
       return oldTail;
     }
+    // adds val to the beginning of the list 
     unshift(val) {
       let newNode = new Node(val);
       if (!this.head) {
@@ -52,11 +58,12 @@ class Node {
       this.length++;
       return this;
     }
-    //SHIFT - to remove
+
+    //remove from the beginning of the list 
     shift() {
       let oldHead = this.head;
       if (!this.head) return undefined;
-      if (this.length === 1) {
+      if (this.length === 1) { //alt: if(this.head === this.tail)
         this.head = null;
         this.tail = null;
       } else {
@@ -67,7 +74,7 @@ class Node {
       this.length--;
       return oldHead;
     }
-    //GET - takes in an index and returns the node at that index
+    //takes in an index and returns the node at that index
     get(index) {
       if (index < 0 || index >= this.length) return null;
       if (index <= this.length / 2) {
@@ -133,10 +140,28 @@ class Node {
       return true;
     }
   }
-  
-  let list = new DoublyLinkedList();
-  list.push(50);
-  list.push(30);
-  list.push(80);
-  list.insert(1, 5000);
-  console.log(list);
+////-----------------------Making the list --------------------------------------////
+let list = new DoublyLinkedList();
+list.push(50);
+list.push(30);
+
+list.push(80);
+// console.log(list);
+console.log('--------------------------------------------');
+
+list.unshift(70);
+console.table(list);
+console.log('--------------------------------------------');
+
+list.shift();
+console.table(list);
+console.log('--------------------------------------------');
+
+list.pop();
+console.table(list);
+console.log('--------------------------------------------');
+
+
+// list.insert(1, 5000);
+// console.log(list);
+// console.log('--------------------------------------------')
