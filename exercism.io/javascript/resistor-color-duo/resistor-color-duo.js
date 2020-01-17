@@ -1,15 +1,8 @@
 import { createBrotliCompress } from "zlib";
 
 
-export const decodedValue = (arr) => {
-  let clrsArr = ['Black', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Violet', 'Grey', 'White'];
-  let formatArr = clrsArr.map(clr => clr.toLowerCase());
-  let pairs = {};
-  for(let i in formatArr){
-    return pairs[formatArr[i]] = i;
-  }
-  console.log(pairs)
-  // arr.forEach(clr => {
-  //   if(clr === '')
-  // });
-};
+// copy pasta'd to lazy to format
+let clrsArr = ['Black', 'Brown', 'Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Violet', 'Grey', 'White'];
+const formatArr = clrsArr.map(clr => clr.toLowerCase());
+const colorCode = (color) => formatArr.indexOf(color);
+export const decodedValue = ([a,b]) => colorCode(a) *10 + colorCode(b);
