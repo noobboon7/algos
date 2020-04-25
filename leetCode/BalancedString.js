@@ -37,6 +37,5 @@ var balancedStringSplit = function(s) {
         if(char === 'R'){count --}
         if(count === 0){match ++}
     })
-    return match 
-    
+    return match;
 };
