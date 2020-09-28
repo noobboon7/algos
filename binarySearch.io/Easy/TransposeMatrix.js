@@ -25,4 +25,4 @@ function transposeMatrix(matrix) {
 	}
 
 	return matrix;
-}
+} 
