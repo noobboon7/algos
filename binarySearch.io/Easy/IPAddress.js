@@ -6,7 +6,7 @@ IPv4 addresses must follow the format A.B.C.D, where A, B, C, and D are numbers 
 Example 1
 Input
 
-s = "0.0.0.0"
+// s = "0.0.0.0"
 Output
 
 true
